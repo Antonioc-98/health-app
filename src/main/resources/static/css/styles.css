@@ -33,6 +33,9 @@ h3{
 p{
     font-size: 1rem;
 }
+div{
+    font-size: 1rem;
+}
 
 /* Header */
 .logo {
@@ -356,6 +359,9 @@ header {
     p {
         font-size: calc(1rem * 1.20); /* 1rem * 1.20 = 1.15rem */
     }
+    div {
+            font-size: calc(1rem * 1.20); /* 1rem * 1.20 = 1.15rem */
+        }
 
     footer {
         margin-top: calc(150px * 1.20); /* 150px * 1.20 = 172.5px */
@@ -402,6 +408,10 @@ header {
         width: calc(450px * 1.20); /* 450px * 1.20 = 517.5px */
         padding: calc(25px * 1.20); /* 25px * 1.20 = 28.75px */
         margin-top: calc(30px * 1.20); /* 30px * 1.20 = 34.5px */
+    }
+
+    .kalkulator_okvir_tekst {
+        font-size: calc(1rem * 1.20); /* 16px → 1rem */
     }
 
     .kalkulator_okvir_input {
