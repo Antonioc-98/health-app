@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<header>
+    <div class="izbornik">
+        <div class="izbornik_1_2">
+            <div class="izbornik_logo">
+                <img src="/images/Bodyfit.png" alt="" class="logo">
+            </div>
+        </div>
+        <div class="izbornik_2_2">
+            <a href="/" class="izbornik_linkovi">
+                <div class="izbornik_vanjski">
+                    <div class="izbornik_unutarnji">Početna</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</header>
+<body>
+    <main>
+    <div class="izbornik"></div>
+    <div class="login">
+        <h2>Prijava</h2>
+        <form action="/login" method="post" class="login_okvir">
+            <div class="login_element">
+                <div>Email</div>
+                <label for="username"></label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="login_element">
+                <div>Lozinka:</div>
+                <label for="password"></label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="login_element">
+                <button type="submit" class="login_btn">Prijava</button>
+            </div>
+        </form>
+        <p>Nemate račun? Registrirajte se: <a href="/register" class="reg_link">ovdje</a></p>
+        <p>Zaboravljena lozinka? Klikni <a href="/password-reset" class="reg_link">ovdje</a></p>
+    </div>
+
+
+</main>
+<footer></footer>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<header>
+    <div class="izbornik">
+        <div class="izbornik_1_2">
+            <div class="izbornik_logo">
+                <img src="/images/Bodyfit.png" alt="" class="logo">
+            </div>
+        </div>
+        <div class="izbornik_2_2">
+            <a href="/" class="izbornik_linkovi">
+                <div class="izbornik_vanjski">
+                    <div class="izbornik_unutarnji">Početna</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</header>
+<body>
+<main>
+    <div class="welcome">
+        <div class="welcome_naslov">Dobrodošli na BodyFit</div>
+        <div class="welcome_tekst">Ako želite procjenu vaše tjelesne kompozicije, te preporuke i savjete na temelju izračuna, unesite vaše mjere u kalkulator.</div>
+    </div>
+        <form th:action="@{/}" method="POST" class="kalkulator">
+            <div class="kalkulator_okvir">
+                <div class="kalkulator_okvir_tekst">Visina u centimetrima</div>
+                    <div>
+                        <label for="visina"></label>
+                        <input type="number" name="visina" id="visina" required class="kalkulator_okvir_input">
+                    </div>
+                <div class="kalkulator_okvir_tekst">Težina u kilogramima</div>
+                    <div>
+                        <label for="tezina"></label>
+                        <input type="number" name="tezina" id="tezina" required class="kalkulator_okvir_input">
+                    </div>
+                <div class="kalkulator_okvir_tekst">Opseg struka u centimentrima</div>
+                    <div>
+                        <label for="struk"></label>
+                        <input type="number" name="struk" id="struk" required class="kalkulator_okvir_input">
+                    </div>
+                <div class="kalkulator_okvir_tekst">Godine</div>
+                    <div>
+                        <label for="godine"></label>
+                        <input type="number" name="godine" id="godine" required class="kalkulator_okvir_input">
+                    </div>
+                <div class="kalkulator_okvir_tekst">Odaberite spol</div>
+                <div>
+                    <select id="spol" name="spol" required class="kalkulator_okvir_input">
+                        <option value=""></option>
+                        <option value="MUSKO">Muški</option>
+                        <option value="ZENSKO">Ženski</option>
+                    </select>
+                </div>
+                <div class="kalkulator_razmak"></div>
+            <button type="submit" class="generic_btn">Izračunaj</button>
+        </div>
+    </form>
+
+    <div class="rezultati">
+        <div>
+            <!-- BMI Section -->
+            <div th:if="${bmi != null}" class="rezultati_okvir">
+                <h2>BMI:</h2>
+                <div class="result_spremnik">
+                    <p th:text="${bmi}"></p>
+                    <div th:if="${bmi < 18.5}" class="result-box orange"></div>
+                    <div th:if="${bmi >= 18.5 and bmi < 25}" class="result-box green"></div>
+                    <div th:if="${bmi >= 25}" class="result-box orange"></div>
+                </div>
+            </div>
+
+            <!-- Body Fat Percentage Section -->
+            <div th:if="${bodyFatPercentage != null}" class="rezultati_okvir">
+                <h2>Postotak tjelesne masti:</h2>
+                <div class="result_spremnik">
+                    <p th:text="${bodyFatPercentage + '%'}"></p>
+                    <!-- For Men -->
+                    <div th:if="${spol == 'MUSKO'}">
+                        <div th:if="${bodyFatPercentage < 12}" class="result-box dark-green"></div>
+                        <div th:if="${bodyFatPercentage >= 12 and bodyFatPercentage < 23}" class="result-box green"></div>
+                        <div th:if="${bodyFatPercentage >= 23}" class="result-box orange"></div>
+                    </div>
+                    <!-- For Women -->
+                    <div th:if="${spol == 'ZENSKO'}">
+                        <div th:if="${bodyFatPercentage < 23}" class="result-box dark-green"></div>
+                        <div th:if="${bodyFatPercentage >= 23 and bodyFatPercentage < 33}" class="result-box green"></div>
+                        <div th:if="${bodyFatPercentage >= 33}" class="result-box orange"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FFMI dio -->
+            <div th:if="${ffmi != null}" class="rezultati_okvir">
+                <h2>FFMI:</h2>
+                <div class="result_spremnik">
+                    <p th:text="${ffmi}"></p>
+                    <!-- Za muškarce -->
+                    <div th:if="${spol == 'MUSKO'}">
+                        <div th:if="${ffmi > 21}" class="result-box dark-green"></div>
+                        <div th:if="${ffmi > 18 and ffmi <= 21}" class="result-box green"></div>
+                        <div th:if="${ffmi <= 18}" class="result-box orange"></div>
+                    </div>
+                    <!-- Za žene -->
+                    <div th:if="${spol == 'ZENSKO'}">
+                        <div th:if="${ffmi > 19}" class="result-box dark-green"></div>
+                        <div th:if="${ffmi > 16 and ffmi <= 19}" class="result-box green"></div>
+                        <div th:if="${ffmi <= 16}" class="result-box orange"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poruka -->
+        <div th:if="${message_1 != null}" class="rezultati_okvir">
+            <h3>Rezultat:</h3>
+            <div th:text="${message_1}" class="rezultat_tekst"></div>
+        </div>
+    </div>
+    <div class="info">
+        <h3>Dodatne informacije</h3>
+        <p> BMI (Body Mass Index) mjeri omjer težine u odnosu na visinu.
+            Koristi se da bi se procijenilo je li nečija težina zdrava za
+            određenu visinu ali ne razlikuje mišiće od masti. FFMI mjeri omjer
+            mišićne mase u odnosu na visinu, pa je točniji pokazatelj
+            stanja tjelesne kompozicije i zdravlja za sportaše ili
+            aktivne ljude. Dakle, BMI pokazuje opću težinu, a FFMI
+            mišićnu razvijenost. Ove mjere pomažu u prepoznavanju
+            rizike povezane s previše ili premalo tjelesne težine,
+            poput bolesti srca, dijabetesa ili pothranjenosti.</p>
+    </div>
+    <!-- Ako korisnik nije logiran -->
+    <div sec:authorize="!isAuthenticated()" class="center_rezultat">
+        <h3>Ako želite dodatno znati vaš bazalni metabolizam, preporučeni minimalni dnevni
+            unos proteina, te preporuku za poboljšanje zdravlja i tjelesne kompozicije, prijavite
+            se ili registrirajte ako još niste.</h3>
+        <div>
+            <a href="/login" class="btn_holder">
+                <div class="generic_btn">Prijavi se</div>
+            </a>
+        </div>
+    </div>
+    <!-- Ako je korisnik logiran -->
+    <div sec:authorize="isAuthenticated()" class="center_rezultat">
+        <div th:if="${bmr != null}" class="rezultati_okvir">
+            <h2>Bazalni metabolizam (BMR):</h2>
+            <div class="result_spremnik">
+                <p th:text="${bmr + ' kcal/dan'}"></p>
+            </div>
+        </div>
+        <div th:if="${protein != null}" class="rezultati_okvir">
+            <h2>Minimalni preporučeni unos proteina u danu:</h2>
+            <div class="result_spremnik">
+                <p th:text="${protein + ' grama'}"></p>
+            </div>
+        </div>
+        <div th:if="${message_2 != null}" class="rezultati_okvir">
+            <h3>Preporuka:</h3>
+            <div th:text="${message_2}" class="rezultat_tekst"></div>
+        </div>
+        <div th:if="${weather != null}">
+            <h1>Vrijeme u Puli, Hrvatska</h1>
+            <p>Temperatura: <span th:text="${weather.temperature_2m} + ' °C'"></span></p>
+            <p>Oborine: <span th:text="${weather.precipitation} + ' mm'"></span></p>
+            <p>Brzina vjetra: <span th:text="${weather.wind_speed_10m} + ' km/h'"></span></p>
+            <!-- Ako vrijeme nije idealno -->
+            <div th:if="${weather.temperature_2m > 30 or weather.temperature_2m < -5 or weather.precipitation > 0 or weather.wind_speed_10m > 20}" class="vrijeme">
+                Vrijeme nije idealno za trening na otvorenom.
+            </div>
+            <!-- Ako je idealno -->
+            <div th:unless="${weather.temperature_2m > 30 or weather.temperature_2m < -5 or weather.precipitation > 0 or weather.wind_speed_10m > 20}" class="vrijeme">
+                Vrijeme je idealno za trening na otvorenom.
+            </div>
+            <div th:unless="${weather != null}">
+                <p>Podatci za vrijeme su trenutno nedostupni.</p>
+            </div>
+        </div>
+        <form th:action="@{/logout}" method="post">
+                <button class="odjava_btn">Odjava</button>
+        </form>
+    </div>
+</main>
+<footer></footer>
+</body>
+</html>
