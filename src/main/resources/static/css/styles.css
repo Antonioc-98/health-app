@@ -1,26 +1,25 @@
 * {
-    font-family: Montserrat;
+	font-family: Montserrat;
 }
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
-footer {
-    margin-top: 150px;
+footer{
+    margin-top:150px;
 }
-
 h1{
     font-size: 1.8rem;
 }
@@ -38,122 +37,128 @@ div{
 }
 
 /* Header */
+
 .logo {
-    height: 70px;
+	height: 70px;
 }
 
 header {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
 }
 
 .izbornik {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: 15px;
+	padding-top: 15px;
+
+	width: 100%;
 }
 
 .izbornik_1_2 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 .izbornik_2_2 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding-right: 40px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding-right: 40px;
 }
 
 .izbornik_logo {
-    display: flex;
-    justify-content: left;
-    padding-left: 50px;
+	display: flex;
+	justify-content: left;
+	padding-left: 50px;
 }
 
 .izbornik_logo img {
-    transition: all 200ms ease;
+	transition: all 200ms ease;
 }
 
 .izbornik_logo img:hover {
-    scale: 110%;
+	scale: 110%;
 }
 
 .izbornik_linkovi {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    font-size: 1rem; /* 16px → 1rem */
-    border-bottom: 1px solid;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	font-size: large;
+	border-bottom: 1px solid;
 }
 
 .izbornik_vanjski {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem; /* 16px → 1rem */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: large;
 }
 
 .izbornik_unutarnji {
-    transition: all 200ms ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 40px;
+	transition: all 200ms ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	height: 40px;
 }
 
 .izbornik_unutarnji:hover {
-    background-color: #f03635;
-    border-radius: 10px;
-    color: white;
-    font-weight: 500;
+	background-color: #f03635;
+	border-radius: 10px;
+	color: white;
+	font-weight: 500;
 }
+/* /Header */
 
 /* Dobrodošlica */
-.welcome {
+
+.welcome{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.welcome_naslov {
+.welcome_naslov{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.875rem; /* 30px → 1.875rem */
+    font-size: 30px;
     font-weight: 500;
     padding-top: 40px;
 }
 
-.welcome_tekst {
+.welcome_tekst{
     padding-left: 40px;
     padding-right: 40px;
     display: flex;
     justify-content: center;
     padding-top: 40px;
     text-align: center;
-    font-size: 1rem; /* 16px → 1rem */
 }
 
+/* /Dobrodošlica */
+
 /* Kalkulator */
-.kalkulator {
+
+.kalkulator{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.kalkulator_okvir {
+.kalkulator_okvir{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -166,53 +171,56 @@ header {
     margin-top: 30px;
 }
 
-.kalkulator_okvir_tekst {
+.kalkulator_okvir_tekst{
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5px;
-    font-size: 1rem; /* 16px → 1rem */
+    font-size: 16px;
 }
 
-.kalkulator_okvir_input {
+.kalkulator_okvir_input{
     width: 350px;
     height: 35px;
     border: black 3px solid;
     border-radius: 5px;
-    font-size: 1rem; /* 16px → 1rem */
+    font-size: 16px;
     text-align: center;
 }
 
-.kalkulator_razmak {
+.kalkulator_razmak{
     margin-top: 30px;
 }
 
+/* /Kalkulator */
+
 /* Rezultati */
-.rezultati {
+
+.rezultati{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.rezultati_okvir {
+.rezultati_okvir{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.125rem; /* 18px → 1.125rem */
+    font-size: 18px;
     font-weight: 600;
 }
 
-.rezultat_tekst {
+.rezultat_tekst{
     display: flex;
     justify-items: center;
     align-content: center;
     text-align: justify;
-    margin-right: 25px;
+    margin right: 25px;
     margin-left: 25px;
     font-weight: 500;
-    font-size: 1rem; /* 16px → 1rem */
+    font-size: 16px
 }
 
 .result-box {
@@ -244,10 +252,10 @@ header {
     background-color: #FFA500;
 }
 
-.center_rezultat {
+.center_rezultat{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content; center;
     align-items: center;
     text-align: center;
     margin-top: 25px;
@@ -255,89 +263,124 @@ header {
     margin-right: 25px;
 }
 
-.info {
+.info{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: justify;
     margin-left: 25px;
-    margin-right: 25px;
-    font-size: 1rem; /* 16px → 1rem */
+    margin-right:25px;
 }
 
+/* /Rezultati */
+
+/* Registracija-Prijava */
+
+.reg_link{
+    font-weight: 700;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.login_okvir{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.login_element{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+}
+
+
+
+/* /Registracija-Prijava */
+
 /* Dugme */
-.btn_holder {
+
+.btn_holder{
     display: inline-flex;
 }
 
 .generic_btn {
-    transition: all 150ms ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 155px;
-    height: 35px;
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 7px;
-    border: 5px solid #f03635;
-    color: white;
-    background-color: #f03635;
+	transition: all 150ms ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 155px;
+	height: 35px;
+	font-size: 15px;
+	font-weight: 700;
+	border-radius: 7px;
+	border: 5px solid #f03635;
+	color: white;
+	background-color: #f03635;
 }
 
 .generic_btn:hover {
-    background-color: white;
-    color: black;
+	background-color: white;
+	color: black;
     border: 5px solid #f03635;
 }
 
-.odjava_btn {
+.odjava_btn{
     transition: all 150ms ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 155px;
-    height: 35px;
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 7px;
-    border: 5px solid #f03635;
-    color: black;
-    background-color: white;
-    margin-top: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 155px;
+	height: 35px;
+	font-size: 15px;
+	font-weight: 700;
+	border-radius: 7px;
+	border: 5px solid #f03635;
+	color: black;
+	background-color: white;
+	margin-top: 40px;
 }
 
-.odjava_btn:hover {
+.odjava_btn:hover{
     background-color: #f03635;
-    color: white;
+	color: white;
     border: 5px solid #f03635;
 }
 
-.login_btn {
+.login_btn{
     transition: all 150ms ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 155px;
-    height: 35px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 7px;
-    border: 1px solid black;
-    color: black;
-    background-color: #d3d3d3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 155px;
+	height: 35px;
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: 7px;
+	border: 1px solid black;
+	color: black;
+	background-color: #d3d3d3;
 }
 
-.login_btn:hover {
+.login_btn:hover{
     background-color: #bebebe;
-    color: black;
+	color: black;
 }
+
+/* /Dugme */
 
 /* Ostalo */
-.vrijeme {
+
+.vrijeme{
     text-decoration: underline;
 }
+
+/* /Ostalo */
 @media (max-width: 1000px) {
     /* Skaliranje za 20% */
     html {
