@@ -1,6 +1,2 @@
-# Ignore application.properties containing sensitive info
-src/main/resources/application.properties
-src/main/resources/application-local.properties
-src/main/resources/application-docker.properties
-docker-compose.yml
+
 
